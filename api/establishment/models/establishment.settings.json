@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "establishments",
+  "info": {
+    "name": "establishment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "short_description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "clients": {
+      "collection": "client",
+      "via": "establishments",
+      "dominant": true
+    },
+    "category": {
+      "model": "category",
+      "via": "establishments"
+    },
+    "campaigns": {
+      "collection": "campaign"
+    }
+  }
+}
