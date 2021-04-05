@@ -1,13 +1,26 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import Logo from '.'
 
 describe('<Logo />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<Logo />)
+  it('should render a white label by default', () => {
+    // renderizar o componente 'render'
+    // selecionar o elemento a ser testado 'screen' (queries) - getByLabel...
+    // expect - assertion - asserção - comparação - análise (espero que renderize a logo branca)
+    renderWithTheme(<Logo />)
+    expect(screen.getByLabelText(/Loyalty/i).parentElement).toHaveStyle({
+      color: '#FAFAFA'
+    })
+  })
 
-    expect(screen.getByRole('heading', { name: /Logo/i })).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
+  it('should render a black label when color is passed', () => {
+    // renderizar o componente 'render'
+    // selecionar o elemento a ser testado 'screen' (queries) - getByLabel...
+    // expect - assertion - asserção - comparação - análise (espero que renderize a logo branca)
+    renderWithTheme(<Logo color="black" />)
+    expect(screen.getByLabelText(/Loyalty/i).parentElement).toHaveStyle({
+      color: '#030517'
+    })
   })
 })

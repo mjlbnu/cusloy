@@ -6,7 +6,13 @@ export type LogoProps = {
 
 const Logo = ({ color = 'white' }: LogoProps) => (
   <S.Wrapper color={color}>
-    <svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="512"
+      height="512"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Loyalty"
+    >
       <defs>
         <linearGradient id="a" x1=".5" x2=".5" y1="1" y2="0">
           <stop offset="0" stopColor="#fd5900" />
