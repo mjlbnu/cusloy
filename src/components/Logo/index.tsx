@@ -1,7 +1,11 @@
 import * as S from './styles'
 
-const Logo = () => (
-  <S.Wrapper>
+export type LogoProps = {
+  color?: 'white' | 'black'
+}
+
+const Logo = ({ color = 'white' }: LogoProps) => (
+  <S.Wrapper color={color}>
     <svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="a" x1=".5" x2=".5" y1="1" y2="0">
@@ -14,14 +18,14 @@ const Logo = () => (
         fill="url(#a)"
       />
       <text
-        fill="#3d2506"
+        fill="currentColor"
         strokeWidth="10"
         opacity="undefined"
         x="51.079"
         y="476.09"
         fontSize="165"
         fontFamily="'Rounded Mplus 1c Medium'"
-        stroke="#3d2506"
+        stroke="#currentColor"
       >
         L O Y
       </text>
