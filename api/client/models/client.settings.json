@@ -20,6 +20,14 @@
       "targetField": "name",
       "required": true
     },
+    "campaigns": {
+      "via": "clients",
+      "collection": "campaign"
+    },
+    "atendimentos": {
+      "via": "client",
+      "collection": "atendimento"
+    },
     "establishments": {
       "via": "clients",
       "collection": "establishment"

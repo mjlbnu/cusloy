@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "atendimentos",
+  "info": {
+    "name": "Atendimento"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data": {
+      "type": "datetime",
+      "required": true
+    },
+    "client": {
+      "model": "client",
+      "via": "atendimentos"
+    },
+    "campaign": {
+      "model": "campaign",
+      "via": "atendimentos"
+    }
+  }
+}

@@ -48,17 +48,16 @@
       "plugin": "upload",
       "required": false
     },
+    "category": {
+      "model": "category"
+    },
+    "campaigns": {
+      "collection": "campaign"
+    },
     "clients": {
       "collection": "client",
       "via": "establishments",
       "dominant": true
-    },
-    "category": {
-      "model": "category",
-      "via": "establishments"
-    },
-    "campaigns": {
-      "collection": "campaign"
     }
   }
 }
